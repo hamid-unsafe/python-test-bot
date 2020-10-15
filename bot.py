@@ -6,11 +6,10 @@ import telethon
 import asyncio
 from bot_functions import *
 
-client_name = 'poster-client'
 bot_name = 'poster-bot'
-API_ID = 0000000
-API_HASH = 'string'
-BOT_TOKEN = 'string'
+API_ID = 1759413
+API_HASH = '609e3756b5a95466c9422ab57eea37bb'
+BOT_TOKEN = '345211056:AAGYfHCW8GRliU1hF3zWrGVHOH16PbwKiOg'
 
 bot = TelegramClient(bot_name, API_ID, API_HASH)
 
@@ -23,7 +22,7 @@ async def bot_new_message_handler(event):
     
     await botCommandRecieved(event, command)
   else:
-    await bot.forward_messages(chatId, event.message)
+    await event.respond('default respond')
 
 async def botCommandRecieved(event, command):
   if command == 'start':
